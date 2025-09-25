@@ -7,6 +7,8 @@ const btnNum1 = document.querySelector("#btnNum1");
 const btnNum2 = document.querySelector("#btnNum2");
 const btnSumar = document.querySelector("#btnSumar");
 const btnIgual = document.querySelector("#btnIgual");
+const btnNum3= document.querySelector("#btnNum3");
+const btnNum4= document.querySelector("#btnNum4");
 
 function calcular(num1, num2, operacion) {
     switch (operacion) {
@@ -32,6 +34,16 @@ btnNum1.addEventListener("click", (e) => {
 });
 
 btnNum2.addEventListener("click", (e) => {  
+    document.querySelector("#display").innerText = e.target.innerText;
+    asignarValor(Number(e.target.innerText));
+});
+
+btnNum3.addEventListener("click", (e) => {  
+    document.querySelector("#display").innerText = e.target.innerText;
+    asignarValor(Number(e.target.innerText));
+});
+
+btnNum4.addEventListener("click", (e) => {  
     document.querySelector("#display").innerText = e.target.innerText;
     asignarValor(Number(e.target.innerText));
 });
