@@ -1,6 +1,6 @@
 document.querySelector("#displey").innerText= "0"; 
-let num1=0;
-let num2=0;
+let valor1=0;
+let valor2=0;
 let operacion="";
 
  const btnNum1 = document.querySelector("#btnNum1");
@@ -25,7 +25,7 @@ const btnNum2= document.querySelector("#btnNum2");
 }
 
 function asignarValor(valor) {
-    if( !operacion || !valor1) {
+    if( !operacion || !valor) {
         valor1=valor;
     } else {
         valor2=valor;
@@ -43,16 +43,15 @@ function asignarValor(valor) {
     asignarValor( Number(e.target.innerText));
     });
 
- btnSumar.addEventListener("click", (e) => {  
-    operacion = e.target.innerText;
-    document.querySelector("#displey").innerText = e.target.innerText;
-    });
-    
+ btnSumar.addEventListener("click", () => {  
+    operacion = "+";
+    }); 
+
 
 
     btnIgual.addEventListener("click", () => {  
 
-        const resultado = calcular(num1, num2, operacion);
+        const resultado = calcular(valor1,valor2, operacion);
         document.querySelector("#displey").innerText = resultado;
         num1=resultado;
         operacion="";
