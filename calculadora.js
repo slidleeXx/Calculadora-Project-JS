@@ -9,6 +9,8 @@ const btnSumar = document.querySelector("#btnSumar");
 const btnIgual = document.querySelector("#btnIgual");
 const btnNum3= document.querySelector("#btnNum3");
 const btnNum4= document.querySelector("#btnNum4");
+const btnClear= document.querySelector("#btnClear");
+
 
 function calcular(num1, num2, operacion) {
     switch (operacion) {
@@ -16,6 +18,7 @@ function calcular(num1, num2, operacion) {
         case "-": return num1 - num2;
         case "*": return num1 * num2; 
         case "/": return num1 / num2; 
+        case "clear": return 0;
         default:  return "Operacion no valida";
     }
 }
@@ -51,6 +54,13 @@ btnNum4.addEventListener("click", (e) => {
 btnSumar.addEventListener("click", () => {  
     operacion = "+";
 }); 
+
+btnClear.addEventListener("click", () => {  
+    const resultado = calcular(valor1, valor2, "clear");
+    document.querySelector("#display").innerText = resultado;
+    valor1 = resultado; 
+    operacion = "";
+});
 
 
 btnIgual.addEventListener("click", () => {  
